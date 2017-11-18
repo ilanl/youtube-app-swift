@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="YouTubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="prominent" placeholder="SEARCH VIDEOS" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SDC-4o-dXi">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="56"/>
+                                <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fC6-G8-Um5"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-98-4ID">
+                                <rect key="frame" x="0.0" y="56" width="667" height="319"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6bK-Ef-K0g">
+                                        <rect key="frame" x="0.0" y="28" width="667" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bK-Ef-K0g" id="WLb-Km-bUk">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zbm-YG-rqE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QUn-gB-Bzp"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx7-Vd-FR1" userLabel="Player View" customClass="CompositePlayer" customModule="YouTubeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Rv-s1-Nsx"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67k-Dq-61A"/>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="880-GU-XFR"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9sv-ML-Ab7"/>
+                            <constraint firstItem="SDC-4o-dXi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DbN-iM-Bql"/>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ubj-xr-vjc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gdV-98-4ID" secondAttribute="trailing" id="Z42-hY-zv3"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="top" secondItem="SDC-4o-dXi" secondAttribute="bottom" id="bhi-Xy-cyg"/>
+                            <constraint firstAttribute="trailing" secondItem="SDC-4o-dXi" secondAttribute="trailing" id="fbL-UW-UMD"/>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ff2-uP-CIx"/>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gQF-Jo-b2o"/>
+                            <constraint firstItem="SDC-4o-dXi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pX1-ph-jLi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gdV-98-4ID" secondAttribute="bottom" id="qnW-Ee-Gxe"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="top" secondItem="SDC-4o-dXi" secondAttribute="bottom" id="sqn-Y1-y0U"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v3A-rG-WNy"/>
+                            <constraint firstItem="gdV-98-4ID" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yPf-49-HUX"/>
+                            <constraint firstItem="yx7-Vd-FR1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yTr-Ne-rs2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="compositePlayer" destination="yx7-Vd-FR1" id="cIC-jy-hOT"/>
+                        <outlet property="searchBar" destination="SDC-4o-dXi" id="OdP-d8-aAm"/>
+                        <outlet property="searchDisplayController" destination="IVl-2h-bJh" id="v68-ZG-hUI"/>
+                        <outlet property="tableView" destination="gdV-98-4ID" id="8jb-rw-4ea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="IVl-2h-bJh">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="SLp-Fr-99C"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Cn5-EG-F8F"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="WjZ-OQ-ZSC"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="agv-0X-bYW"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="372" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+</document>
