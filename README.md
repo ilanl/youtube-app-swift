@@ -24,12 +24,6 @@ We have only 2 screens:
 * A list with search functionality
 * A player with standart functions
 
-(Screenshots)
-
-![alt text](https://www.dropbox.com/s/4le4g6hqdjudc3r/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202017-11-18%20at%2019.34.03.png?raw=1)
-
-![alt text](https://www.dropbox.com/s/qp0zf3w97wt8ts1/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202017-11-18%20at%2019.35.30.png?raw=1)
-
 ### Search Engine
 
 Responsible to retrieve results from YouTube API. Using API Key
